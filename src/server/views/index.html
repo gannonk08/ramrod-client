@@ -1,0 +1,125 @@
+{% extends "_base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+<body>
+<nav class="light-blue lighten-1" role="navigation">
+  <div class="nav-wrapper container"><a id="logo-container" href="https://appthis.com/" class="brand-logo"><img src="https://appthis.com/images/appthis-logo.svg"></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#">Home</a></li>
+    </ul>
+
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href="#">Navbar Link</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <br><br>
+    <h1 class="header center orange-text">TEAM RAMROD</h1>
+    <div class="row center">
+      <h5 class="header col s12 light">MAKING AD-TECH GREAT AGAIN</h5>
+    </div>
+    <div class="row center">
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s1">
+              <label for="day_one">Day 1</label>
+            </div>
+            <div class="input-field col s5">
+              <i class="material-icons prefix">date_range</i>
+              <input id="day_one" type="date" class="validate">
+            </div>
+            <div class="input-field col s1">
+              <label for="day_two">Day 2</label>
+            </div>
+            <div class="input-field col s5">
+              <i class="material-icons prefix">date_range</i>
+              <input id="day_two" type="date" class="validate">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row center">
+      <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Pubs</a>
+    </div>
+    <br><br>
+
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 m12">
+        <div id="ingredients">
+          <table class="bordered highlight">
+            <thead>
+            <tr>
+              <th data-field="publisherId">Publishers</th>
+              <th data-field="revenueDelta">Revenue</th>
+              <th data-field="requestsDelta">Requests</th>
+              <th data-field="clicksDelta">Clicks</th>
+              <th data-field="conversionsDelta">Conversions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Playrix (12) </td>
+              <td>$ 11234.00 </td>
+              <td> - 120,000 </td>
+              <td> - 34,000 </td>
+              <td> - 25,000 </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <div class="row">
+        </div>
+      </div>
+  </footer>
+
+{% endblock %}
