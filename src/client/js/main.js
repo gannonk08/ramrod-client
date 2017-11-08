@@ -22,11 +22,47 @@
 
             var pubId = this.getAttribute('id');
             var pubUrl = `http://localhost:3000/pubDrill/${pubId}?dateOne=${dayOneDate}&dateTwo=${dayTwoDate}&amId=${amId}`;
-            $.ajax({url: pubUrl, success: function(res)
+            $.ajax({url: pubUrl, success: function(resPub)
             {
-                $("#secTables").replaceWith(res);
+                $("#secTables").replaceWith(resPub);
 
             //    network drill down
+                $( ".netRow" ).click(function(e) {
+                    var selected = $(this).hasClass("highlighted");
+                    $(".netRow").removeClass("highlighted");
+                    if(!selected) {
+                        $(this).addClass("highlighted");
+                    }
+
+                    var advId = this.getAttribute('id');
+                    var netUrl = `http://localhost:3000/netDrill/${pubId}?dateOne=${dayOneDate}&dateTwo=${dayTwoDate}&advId=${advId}`;
+                    $.ajax({url: netUrl, success: function(res)
+                    {
+                        $("#secTables").replaceWith(res);
+                        $( ".netRow" ).addClass("highlighted");
+
+                        //    offer drill down
+                        $( ".offerRow" ).click(function(e) {
+                            var selected = $(this).hasClass("highlighted");
+                            $(".offerRow").removeClass("highlighted");
+                            if(!selected) {
+                                $(this).addClass("highlighted");
+                            }
+
+                            var offerId = this.getAttribute('id');
+                            var netUrl = `http://localhost:3000/offerDrill/${pubId}?dateOne=${dayOneDate}&dateTwo=${dayTwoDate}&offerId=${offerId}&advId=${advId}`;
+                            $.ajax({url: netUrl, success: function(res)
+                            {
+                                $("#secTables").replaceWith(res);
+                                $( ".offerRow" ).addClass("highlighted");
+                            }
+                            });
+
+                        });
+                    }
+                    });
+
+                });
 
             }
             });

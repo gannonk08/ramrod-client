@@ -72,7 +72,7 @@
                         <tbody>
 
                         {% for offer in all.offers %}
-                        <tr id="{{offer.Adv_ID}}" class="offerRow">
+                        <tr id="{{offer.Offer_ID}}" class="offerRow">
                             <td> {{offer.Offer_ID}}</td>
                             <td> {{offer.Offer}}</td>
                             <td> {{offer.day_1_Revenue}}</td>
@@ -191,6 +191,7 @@
                     <table class="bordered highlight platformTable">
                         <thead>
                         <tr>
+                            <th data-field="platformlisherId">Platform Id</th>
                             <th data-field="platformlisherId">Platform</th>
                             <th data-field="day1Rev">Day 1 Revenue</th>
                             <th data-field="day2Rev">Day 2 Revenue</th>
@@ -205,7 +206,8 @@
                         <tbody>
 
                         {% for platform in all.platforms %}
-                        <tr id="{{platform.Platform}}" class="platformRow">
+                        <tr id="{{platform.platform_id}}" class="platformRow">
+                            <td> {{platform.platform_id}}</td>
                             <td> {{platform.Platform}}</td>
                             <td> {{platform.day_1_Revenue}}</td>
                             <td> {{platform.day_2_Revenue}}</td>

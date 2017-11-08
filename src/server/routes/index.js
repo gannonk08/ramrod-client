@@ -49,5 +49,43 @@ router.get('/pubDrill/:id', function (req, res, next) {
     });
 });
 
+router.get('/netDrill/:id', function (req, res, next) {
+    const renderObject = {};
+    const pubId = parseInt(req.params.id);
+
+
+    var dateStart = req.query.dateOne;
+    var dateEnd = req.query.dateTwo;
+    var advId = req.query.advId;
+    var url = `http://localhost:5000/pub/${pubId}?date.start=${dateStart}&date.end=${dateEnd}&advId=${advId}`;
+
+    console.log(url);
+
+    request(url, function (error, response, body) {
+        renderObject.all = JSON.parse(body);
+        res.render('secondaryTables', renderObject);
+    });
+});
+
+router.get('/offerDrill/:id', function (req, res, next) {
+    const renderObject = {};
+    const pubId = parseInt(req.params.id);
+
+
+    var dateStart = req.query.dateOne;
+    var dateEnd = req.query.dateTwo;
+    var offerId = req.query.offerId;
+    var advId = req.query.advId;
+
+    var url = `http://localhost:5000/pub/${pubId}?date.start=${dateStart}&date.end=${dateEnd}&offerId=${offerId}&advId=${advId}`;
+
+    console.log(url);
+
+    request(url, function (error, response, body) {
+        renderObject.all = JSON.parse(body);
+        res.render('secondaryTables', renderObject);
+    });
+});
+
 
 module.exports = router;
