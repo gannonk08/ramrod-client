@@ -67,6 +67,26 @@ router.get('/netDrill/:id', function (req, res, next) {
     });
 });
 
+router.get('/geoDrill/:id', function (req, res, next) {
+    const renderObject = {};
+    const pubId = parseInt(req.params.id);
+
+
+    var dateStart = req.query.dateOne;
+    var dateEnd = req.query.dateTwo;
+    var iso = req.query.iso;
+    var advId = req.query.advId;
+
+    var url = `http://localhost:5000/pub/${pubId}?date.start=${dateStart}&date.end=${dateEnd}&iso=${iso}&advId=${advId}`;
+
+    console.log(url);
+
+    request(url, function (error, response, body) {
+        renderObject.all = JSON.parse(body);
+        res.render('secondaryTables', renderObject);
+    });
+});
+
 router.get('/offerDrill/:id', function (req, res, next) {
     const renderObject = {};
     const pubId = parseInt(req.params.id);

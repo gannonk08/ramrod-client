@@ -41,6 +41,27 @@
                         $("#secTables").replaceWith(res);
                         $( ".netRow" ).addClass("highlighted");
 
+                        //    geo drill down
+                        $( ".geoRow" ).click(function(e) {
+                            var selected = $(this).hasClass("highlighted");
+                            $(".geoRow").removeClass("highlighted");
+                            if(!selected) {
+                                $(this).addClass("highlighted");
+                            }
+                            var iso = this.getAttribute('id');
+
+                            var netUrl = `http://localhost:3000/geoDrill/${pubId}?dateOne=${dayOneDate}&dateTwo=${dayTwoDate}&iso=${iso}&advId=${advId}`;
+                            $.ajax({url: netUrl, success: function(res)
+                            {
+                                $("#secTables").replaceWith(res);
+                                $( ".geoRow" ).addClass("highlighted");
+                                $( ".netRow" ).addClass("highlighted");
+
+                            }
+                            });
+
+                        });
+
                         //    offer drill down
                         $( ".offerRow" ).click(function(e) {
                             var selected = $(this).hasClass("highlighted");
@@ -55,6 +76,8 @@
                             {
                                 $("#secTables").replaceWith(res);
                                 $( ".offerRow" ).addClass("highlighted");
+                                $( ".netRow" ).addClass("highlighted");
+
                             }
                             });
 
