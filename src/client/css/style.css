@@ -12,3 +12,7 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
+
+.highlighted {
+    background: #ffcc80 !important;
+}

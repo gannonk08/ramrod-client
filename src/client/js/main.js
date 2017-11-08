@@ -14,11 +14,20 @@
     $("#pubTable").replaceWith(result);
 
         $( ".pubRow" ).click(function(e) {
+            var selected = $(this).hasClass("highlighted");
+            $(".pubRow").removeClass("highlighted");
+            if(!selected) {
+            $(this).addClass("highlighted");
+            }
+
             var pubId = this.getAttribute('id');
             var pubUrl = `http://localhost:3000/pubDrill/${pubId}?dateOne=${dayOneDate}&dateTwo=${dayTwoDate}&amId=${amId}`;
             $.ajax({url: pubUrl, success: function(res)
             {
                 $("#secTables").replaceWith(res);
+
+            //    network drill down
+
             }
             });
 
