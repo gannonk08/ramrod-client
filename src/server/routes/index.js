@@ -87,6 +87,26 @@ router.get('/geoDrill/:id', function (req, res, next) {
     });
 });
 
+router.get('/geoOnlyDrill/:id', function (req, res, next) {
+    const renderObject = {};
+    const pubId = parseInt(req.params.id);
+
+
+    var dateStart = req.query.dateOne;
+    var dateEnd = req.query.dateTwo;
+    var iso = req.query.iso;
+    var advId = req.query.advId;
+
+    var url = `http://localhost:5000/pub/${pubId}?date.start=${dateStart}&date.end=${dateEnd}&iso=${iso}`;
+
+    console.log(url);
+
+    request(url, function (error, response, body) {
+        renderObject.all = JSON.parse(body);
+        res.render('secondaryTables', renderObject);
+    });
+});
+
 router.get('/offerDrill/:id', function (req, res, next) {
     const renderObject = {};
     const pubId = parseInt(req.params.id);
@@ -98,6 +118,44 @@ router.get('/offerDrill/:id', function (req, res, next) {
     var advId = req.query.advId;
 
     var url = `http://localhost:5000/pub/${pubId}?date.start=${dateStart}&date.end=${dateEnd}&offerId=${offerId}&advId=${advId}`;
+
+    console.log(url);
+
+    request(url, function (error, response, body) {
+        renderObject.all = JSON.parse(body);
+        res.render('secondaryTables', renderObject);
+    });
+});
+
+router.get('/offerOnlyDrill/:id', function (req, res, next) {
+    const renderObject = {};
+    const pubId = parseInt(req.params.id);
+
+
+    var dateStart = req.query.dateOne;
+    var dateEnd = req.query.dateTwo;
+    var offerId = req.query.offerId;
+
+    var url = `http://localhost:5000/pub/${pubId}?date.start=${dateStart}&date.end=${dateEnd}&offerId=${offerId}`;
+
+    console.log(url);
+
+    request(url, function (error, response, body) {
+        renderObject.all = JSON.parse(body);
+        res.render('secondaryTables', renderObject);
+    });
+});
+
+router.get('/platformOnlyDrill/:id', function (req, res, next) {
+    const renderObject = {};
+    const pubId = parseInt(req.params.id);
+
+
+    var dateStart = req.query.dateOne;
+    var dateEnd = req.query.dateTwo;
+    var platformId = req.query.platformId;
+
+    var url = `http://localhost:5000/pub/${pubId}?date.start=${dateStart}&date.end=${dateEnd}&platformId=${platformId}`;
 
     console.log(url);
 
