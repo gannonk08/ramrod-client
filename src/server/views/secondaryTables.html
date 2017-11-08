@@ -45,4 +45,183 @@
             </div>
         </div>
     </div>
+    <div class="section no-pad-bot" id="offer-banner">
+        <div class="row center">
+            <h4 class="header center orange-text">Offers</h4>
+        </div>
+    </div>
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m12">
+                <div id="">
+                    <table class="bordered highlight offerTable">
+                        <thead>
+                        <tr>
+                            <th data-field="offerlisherId">Offer Id</th>
+                            <th data-field="offerlisherName">Offer Name</th>
+                            <th data-field="day1Rev">Day 1 Revenue</th>
+                            <th data-field="day2Rev">Day 2 Revenue</th>
+                            <th data-field="revenueDelta">Revenue Delta</th>
+                            <th data-field="percentRevenueDelta">% Revenue Delta</th>
+                            <th data-field="day1Clicks">Day 1 Clicks</th>
+                            <th data-field="day2Clicks">Day 2 Clicks</th>
+                            <th data-field="day1Conversions">Day 1 Conversions</th>
+                            <th data-field="day2Conversions">Day 2 Conversions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for offer in all.offers %}
+                        <tr id="{{offer.Adv_ID}}" class="offerRow">
+                            <td> {{offer.Offer_ID}}</td>
+                            <td> {{offer.Offer}}</td>
+                            <td> {{offer.day_1_Revenue}}</td>
+                            <td> {{offer.day_2_Revenue}}</td>
+                            <td> {{offer.revenue_delta}}</td>
+                            <td> {{offer.percent_revenue_delta}}</td>
+                            <td> {{offer.day_1_Clicks}}</td>
+                            <td> {{offer.day_2_Clicks}}</td>
+                            <td> {{offer.day_1_Conversions}}</td>
+                            <td> {{offer.day_2_Conversions}}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section no-pad-bot" id="subids-banner">
+        <div class="row center">
+            <h4 class="header center orange-text">Sub Ids</h4>
+        </div>
+    </div>
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m12">
+                <div id="">
+                    <table class="bordered highlight subidTable">
+                        <thead>
+                        <tr>
+                            <th data-field="subidlisherId">SubId</th>
+                            <th data-field="day1Rev">Day 1 Revenue</th>
+                            <th data-field="day2Rev">Day 2 Revenue</th>
+                            <th data-field="revenueDelta">Revenue Delta</th>
+                            <th data-field="percentRevenueDelta">% Revenue Delta</th>
+                            <th data-field="day1Clicks">Day 1 Clicks</th>
+                            <th data-field="day2Clicks">Day 2 Clicks</th>
+                            <th data-field="day1Conversions">Day 1 Conversions</th>
+                            <th data-field="day2Conversions">Day 2 Conversions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for subid in all.subids %}
+                        <tr id="{{subid.SubID}}" class="subidRow">
+                            <td> {{subid.SubID}}</td>
+                            <td> {{subid.day_1_Revenue}}</td>
+                            <td> {{subid.day_2_Revenue}}</td>
+                            <td> {{subid.revenue_delta}}</td>
+                            <td> {{subid.percent_revenue_delta}}</td>
+                            <td> {{subid.day_1_Clicks}}</td>
+                            <td> {{subid.day_2_Clicks}}</td>
+                            <td> {{subid.day_1_Conversions}}</td>
+                            <td> {{subid.day_2_Conversions}}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section no-pad-bot" id="geo-banner">
+        <div class="row center">
+            <h4 class="header center orange-text">Geo</h4>
+        </div>
+    </div>
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m12">
+                <div id="">
+                    <table class="bordered highlight geoTable">
+                        <thead>
+                        <tr>
+                            <th data-field="geolisherId">Country</th>
+                            <th data-field="day1Rev">Day 1 Revenue</th>
+                            <th data-field="day2Rev">Day 2 Revenue</th>
+                            <th data-field="revenueDelta">Revenue Delta</th>
+                            <th data-field="percentRevenueDelta">% Revenue Delta</th>
+                            <th data-field="day1Clicks">Day 1 Clicks</th>
+                            <th data-field="day2Clicks">Day 2 Clicks</th>
+                            <th data-field="day1Conversions">Day 1 Conversions</th>
+                            <th data-field="day2Conversions">Day 2 Conversions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for geo in all.geos %}
+                        <tr id="{{geo.Platform}}" class="geoRow">
+                            <td> {{geo.Country}}</td>
+                            <td> {{geo.day_1_Revenue}}</td>
+                            <td> {{geo.day_2_Revenue}}</td>
+                            <td> {{geo.revenue_delta}}</td>
+                            <td> {{geo.percent_revenue_delta}}</td>
+                            <td> {{geo.day_1_Clicks}}</td>
+                            <td> {{geo.day_2_Clicks}}</td>
+                            <td> {{geo.day_1_Conversions}}</td>
+                            <td> {{geo.day_2_Conversions}}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section no-pad-bot" id="platforms-banner">
+        <div class="row center">
+            <h4 class="header center orange-text">Platforms</h4>
+        </div>
+    </div>
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m12">
+                <div id="">
+                    <table class="bordered highlight platformTable">
+                        <thead>
+                        <tr>
+                            <th data-field="platformlisherId">Platform</th>
+                            <th data-field="day1Rev">Day 1 Revenue</th>
+                            <th data-field="day2Rev">Day 2 Revenue</th>
+                            <th data-field="revenueDelta">Revenue Delta</th>
+                            <th data-field="percentRevenueDelta">% Revenue Delta</th>
+                            <th data-field="day1Clicks">Day 1 Clicks</th>
+                            <th data-field="day2Clicks">Day 2 Clicks</th>
+                            <th data-field="day1Conversions">Day 1 Conversions</th>
+                            <th data-field="day2Conversions">Day 2 Conversions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for platform in all.platforms %}
+                        <tr id="{{platform.Platform}}" class="platformRow">
+                            <td> {{platform.Platform}}</td>
+                            <td> {{platform.day_1_Revenue}}</td>
+                            <td> {{platform.day_2_Revenue}}</td>
+                            <td> {{platform.revenue_delta}}</td>
+                            <td> {{platform.percent_revenue_delta}}</td>
+                            <td> {{platform.day_1_Clicks}}</td>
+                            <td> {{platform.day_2_Clicks}}</td>
+                            <td> {{platform.day_1_Conversions}}</td>
+                            <td> {{platform.day_2_Conversions}}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
