@@ -29,97 +29,43 @@
         <form class="col s12">
           <div class="row">
             <div class="input-field col s1">
-              <label for="day_one">Day 1</label>
+              <label for="dayOne">Day 1</label>
             </div>
-            <div class="input-field col s5">
+            <div class="input-field col s3">
               <i class="material-icons prefix">date_range</i>
-              <input id="day_one" type="date" class="validate">
+              <input id="dayOne" type="date" class="validate" value="2017-11-01">
             </div>
             <div class="input-field col s1">
-              <label for="day_two">Day 2</label>
+              <label for="dayTwo">Day 2</label>
             </div>
-            <div class="input-field col s5">
+            <div class="input-field col s3">
               <i class="material-icons prefix">date_range</i>
-              <input id="day_two" type="date" class="validate">
+              <input id="dayTwo" type="date" class="validate" value="2017-11-02" >
+            </div>
+              <div class="input-field col s1">
+                  <label for="dayTwo">Account Manager Id</label>
+              </div>
+            <div class="input-field col s3">
+              <i class="material-icons prefix">accessibility</i>
+              <input id="amId" type="number" value="692">
             </div>
           </div>
         </form>
       </div>
     </div>
     <div class="row center">
-      <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Pubs</a>
+      <a href="#" id="getPubs" class="btn-large waves-effect waves-light orange">Get Pubs</a>
     </div>
     <br><br>
 
   </div>
 </div>
 
-
-<div class="container">
-  <div class="section">
-    <div class="row">
-      <div class="col s12 m12">
-        <div id="ingredients">
-          <table class="bordered highlight">
-            <thead>
-            <tr>
-              <th data-field="publisherId">Publishers</th>
-              <th data-field="revenueDelta">Revenue</th>
-              <th data-field="requestsDelta">Requests</th>
-              <th data-field="clicksDelta">Clicks</th>
-              <th data-field="conversionsDelta">Conversions</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>Playrix (12) </td>
-              <td>$ 11234.00 </td>
-              <td> - 120,000 </td>
-              <td> - 34,000 </td>
-              <td> - 25,000 </td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <br><br>
-  </div>
-
-  <footer class="page-footer orange">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+<!--Pubs Table -->
+{% include "pubTable.html" %}
+<br><br>
+{% include "secondaryTables.html" %}
 
 
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-        <div class="row">
-        </div>
-      </div>
-  </footer>
 
 {% endblock %}
