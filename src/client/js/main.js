@@ -5,8 +5,8 @@
         e.preventDefault();
         var dayOne = new Date($('#dayOne').val());
         var dayTwo = new Date($('#dayTwo').val());
-        var dayOneDate = dayOne.toISOString().slice(0,10);;
-        var dayTwoDate = dayTwo.toISOString().slice(0,10);;
+        var dayOneDate = dayOne.toISOString().slice(0,10);
+        var dayTwoDate = dayTwo.toISOString().slice(0,10);
         var amId = $('#amId').val();
     var url = `http://localhost:3000/pubs?dateOne=${dayOneDate}&dateTwo=${dayTwoDate}&amId=${amId}`;
     $.ajax({url: url, success: function(result)
